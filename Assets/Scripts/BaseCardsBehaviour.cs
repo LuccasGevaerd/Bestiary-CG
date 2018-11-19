@@ -1,24 +1,135 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BaseCardsBehaviour : MonoBehaviour {
+    [Header("Base Card")]
+    [Space(5)]
+    public Card card;
 
-    public GameObject front;
-    public Vector3 rotation;
-    public RectTransform trans;
+    [Header("Card Values")]
+    [Space(5)]
+    public int atualLife;
+    public int atualAttack;
+    public int atualShield;
 
-	void Start () {
-		
+    [Header("Card Texts")]
+    [Space(5)]
+    public Text cardName;
+    //public Text description;
+    public Text lifeText;
+    public Text attackText;
+    public Text shieldText;
+    public Text costText;
+
+    [Header("Card Images")]
+    [Space(5)]
+    public Image cardArt;
+    public Image cardElement;
+    public Image backgroundElement;
+    public Image levelMoldure;
+
+    [Header("Card Element Symbols")]
+    [Space(5)]
+    public Sprite fireArt;
+    public Sprite windArt;
+    public Sprite watherArt;
+    public Sprite earthArt;
+    public Sprite lightningArt;
+    public Sprite airArt;
+    public Sprite iceArt;
+    public Sprite specialArt;
+
+    [Header("Card Backgrounds")]
+    [Space(5)]
+    public Sprite fireArtBKG;
+    public Sprite windArtBKG;
+    public Sprite watherArtBKG;
+    public Sprite earthArtBKG;
+    public Sprite lightningArtBKG;
+    public Sprite airArtBKG;
+    public Sprite iceArtBKG;
+    public Sprite specialArtBKG;
+
+    [Header("Card Level Moldure")]
+    [Space(5)]
+    public Sprite level1;
+    public Sprite level2;
+    public Sprite level3;
+
+    void Start () {
+        UpdateCard();
 	}
 
 	void Update () {
-        CardsBack();
-        rotation = new Vector3(trans.rotation.x, transform.rotation.y, Mathf.Abs(transform.rotation.z));
 	}
-    void CardsBack ()
+    void UpdateCard ()
     {
-        if(Mathf.Abs(transform.rotation.x) >= 90|| Mathf.Abs(transform.rotation.y) >= 90 ) front.SetActive(false);
-        else front.SetActive(true);
+        atualLife = card.life;
+        atualShield = card.shield;
+        atualAttack = card.attack;
+        costText.text = "" + card.cost;
+
+        ChangeAtualValues();
+
+        switch (card.element)
+        {
+            case "fire":
+                cardArt.sprite = card.fireArt;
+                cardElement.sprite = fireArt;
+                backgroundElement.sprite = fireArtBKG;
+                break;
+            case "wather":
+                cardArt.sprite = card.watherArt;
+                cardElement.sprite = watherArt;
+                backgroundElement.sprite = watherArtBKG;
+                break;
+            case "earth":
+                cardArt.sprite = card.earthArt;
+                cardElement.sprite = earthArt;
+                backgroundElement.sprite = earthArtBKG;
+                break;
+            case "ice":
+                cardArt.sprite = card.iceArt;
+                cardElement.sprite = iceArt;
+                backgroundElement.sprite = iceArtBKG;
+                break;
+            case "lightning":
+                cardArt.sprite = card.lightningArt;
+                cardElement.sprite = lightningArt;
+                backgroundElement.sprite = lightningArtBKG;
+                break;
+            case "air":
+                cardArt.sprite = card.airArt;
+                cardElement.sprite = airArt;
+                backgroundElement.sprite = airArtBKG;
+                break;
+            case "special":
+                cardArt.sprite = card.specialArt;
+                cardElement.sprite = specialArt;
+                backgroundElement.sprite = specialArtBKG;
+                break;
+        }
+        switch (card.level)
+        {
+            case 1:
+                levelMoldure.sprite = level1;
+                break;
+            case 2:
+                levelMoldure.sprite = level2;
+                break;
+            case 3:
+                levelMoldure.sprite = level3;
+                break;
+        }
+    }
+    void ChangeAtualValues ()
+    {
+        cardName.text = "" + card.cardName;
+        lifeText.text = "" + atualLife;
+        attackText.text = "" + atualAttack;
+        shieldText.text = "" + atualShield;
+
     }
 }
