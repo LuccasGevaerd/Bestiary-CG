@@ -59,7 +59,6 @@ public class BaseCardsBehaviour : MonoBehaviour {
     public Sprite level3;
 
     void Start () {
-        UpdateCard();
 	}
 
 	void Update () {
@@ -131,5 +130,10 @@ public class BaseCardsBehaviour : MonoBehaviour {
         attackText.text = "" + atualAttack;
         shieldText.text = "" + atualShield;
 
+    }
+    public void ReciveCardsSetings(Card cardSetings)
+    {
+        card = cardSetings;
+        UpdateCard();
     }
 }
