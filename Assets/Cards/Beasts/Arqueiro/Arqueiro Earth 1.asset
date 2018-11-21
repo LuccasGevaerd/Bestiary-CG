@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a96f8f4cccaebf244af53361f548d6b4, type: 3}
+  m_Name: Arqueiro Earth 1
+  m_EditorClassIdentifier: 
+  cardName: Arqueiro
+  description: Ataca 2 vezes.
+  element: earth
+  level: 1
+  cost: 3
+  life: 5
+  attack: 2
+  shield: 0
+  fireArt: {fileID: 0}
+  windArt: {fileID: 0}
+  watherArt: {fileID: 0}
+  earthArt: {fileID: 0}
+  lightningArt: {fileID: 0}
+  airArt: {fileID: 0}
+  iceArt: {fileID: 0}
+  specialArt: {fileID: 0}
+  cardMesh: {fileID: 0}
+  cardMeshMaterial: {fileID: 0}
+  nextLevelCard: {fileID: 0}
