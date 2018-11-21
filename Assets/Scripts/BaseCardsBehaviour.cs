@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BaseCardsBehaviour : MonoBehaviour {
+public class BaseCardsBehaviour : MonoBehaviour
+{
     [Header("Base Card")]
     [Space(5)]
     public Card card;
@@ -37,7 +38,6 @@ public class BaseCardsBehaviour : MonoBehaviour {
     public Sprite watherArt;
     public Sprite earthArt;
     public Sprite lightningArt;
-    public Sprite airArt;
     public Sprite iceArt;
     public Sprite specialArt;
 
@@ -48,7 +48,6 @@ public class BaseCardsBehaviour : MonoBehaviour {
     public Sprite watherArtBKG;
     public Sprite earthArtBKG;
     public Sprite lightningArtBKG;
-    public Sprite airArtBKG;
     public Sprite iceArtBKG;
     public Sprite specialArtBKG;
 
@@ -58,12 +57,7 @@ public class BaseCardsBehaviour : MonoBehaviour {
     public Sprite level2;
     public Sprite level3;
 
-    void Start () {
-	}
-
-	void Update () {
-	}
-    void UpdateCard ()
+    void UpdateCard()
     {
         atualLife = card.life;
         atualShield = card.shield;
@@ -99,10 +93,10 @@ public class BaseCardsBehaviour : MonoBehaviour {
                 cardElement.sprite = lightningArt;
                 backgroundElement.sprite = lightningArtBKG;
                 break;
-            case "air":
-                cardArt.sprite = card.airArt;
-                cardElement.sprite = airArt;
-                backgroundElement.sprite = airArtBKG;
+            case "wind":
+                cardArt.sprite = card.windArt;
+                cardElement.sprite = windArt;
+                backgroundElement.sprite = windArtBKG;
                 break;
             case "special":
                 cardArt.sprite = card.specialArt;
@@ -123,7 +117,7 @@ public class BaseCardsBehaviour : MonoBehaviour {
                 break;
         }
     }
-    void ChangeAtualValues ()
+    void ChangeAtualValues()
     {
         cardName.text = "" + card.cardName;
         lifeText.text = "" + atualLife;
@@ -135,5 +129,15 @@ public class BaseCardsBehaviour : MonoBehaviour {
     {
         card = cardSetings;
         UpdateCard();
+    }
+    public void MoveInHierarchy(int delta)
+    {
+        int index = transform.GetSiblingIndex();
+        transform.SetSiblingIndex(index + delta);
+    }
+    public void SetConfigCard()
+    {
+        SelectedCardInfo.cardReference = card;
+        Debug.Log("Card Setted");
     }
 }

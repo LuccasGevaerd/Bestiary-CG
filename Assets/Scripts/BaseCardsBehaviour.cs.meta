@@ -3,7 +3,34 @@ guid: c09838e157800fa4f82c4d999972912a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - card: {instanceID: 0}
+  - cardName: {instanceID: 0}
+  - lifeText: {instanceID: 0}
+  - attackText: {instanceID: 0}
+  - shieldText: {instanceID: 0}
+  - costText: {instanceID: 0}
+  - cardArt: {instanceID: 0}
+  - cardElement: {instanceID: 0}
+  - backgroundElement: {instanceID: 0}
+  - levelMoldure: {instanceID: 0}
+  - fireArt: {fileID: 21300000, guid: bc1cf5d6b439ad541a163082414a39ba, type: 3}
+  - windArt: {fileID: 21300000, guid: 32e5a7537f482b340b087afada1e2c93, type: 3}
+  - watherArt: {fileID: 21300000, guid: 74395a1db07be7644b5a7d885517b9cc, type: 3}
+  - earthArt: {fileID: 21300000, guid: bfd7d629619c8d748bd490162c488777, type: 3}
+  - lightningArt: {fileID: 21300000, guid: eaefeea0fb12927488a368d5a40b01cd, type: 3}
+  - iceArt: {fileID: 21300000, guid: 4bdaad487e8c35e45acb229a365b00aa, type: 3}
+  - specialArt: {fileID: 21300000, guid: 66b70534a64423245affa772807c87e2, type: 3}
+  - fireArtBKG: {fileID: 21300000, guid: bbd962ead5650b44884a24c420d2e1fb, type: 3}
+  - windArtBKG: {fileID: 21300000, guid: 1ae2ee40847b97b49aeac92c35971816, type: 3}
+  - watherArtBKG: {fileID: 21300000, guid: c5ad95fde562048419175af55e99b24e, type: 3}
+  - earthArtBKG: {fileID: 21300000, guid: 02c086fa19328cd46a3d1b831ef90a7e, type: 3}
+  - lightningArtBKG: {fileID: 21300000, guid: 0523965ed5dff0241ad78ffb731eb1b5, type: 3}
+  - iceArtBKG: {fileID: 21300000, guid: 55e61f57034749b4bb870c6c0241d611, type: 3}
+  - specialArtBKG: {fileID: 21300000, guid: 4c9658ad1d8f0364d9d2131814925b0a, type: 3}
+  - level1: {fileID: 21300000, guid: d10d04307fd4ac24991fdfa2f0f28fdc, type: 3}
+  - level2: {fileID: 21300000, guid: efad0bf30969a1f4dbce5d156d58b427, type: 3}
+  - level3: {fileID: 21300000, guid: 63c7c438f1ae01c408d1269b53386032, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

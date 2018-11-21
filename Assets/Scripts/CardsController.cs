@@ -10,6 +10,10 @@ public class CardsController : MonoBehaviour {
 
     public GameObject cardPrefab;
     public GameObject playerHand;
+    public GameObject selectedCard;
+    public GameObject desabledTemporaryCard;
+
+    public static Card cardSelectedConfig;
 
     public int inicialHandCards;
 
@@ -18,7 +22,10 @@ public class CardsController : MonoBehaviour {
 	}
 
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.R) || Input.GetMouseButtonDown(0)) GetHandCards(playerDeck, playerHandCards, playerHand, 1);
+        if (Input.GetMouseButtonDown(0))
+        {
+            GetMouseSelection();
+        }
     }
     void GetHandCards(List<Card>Deck, List<Card> HandCards, GameObject Hand, int CardsToRecive)
     {
@@ -37,5 +44,40 @@ public class CardsController : MonoBehaviour {
                 Deck.Remove(Deck[cardsListNumber]);
             }
         }
+    }
+    void GetMouseSelection()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if(Physics.Raycast (ray, out hit))
+        {
+            if (hit.transform.tag == "HandCard")
+            {
+                hit.transform.gameObject.SendMessage("SetConfigCard");
+                if (desabledTemporaryCard != null)
+                {
+                    desabledTemporaryCard.SetActive(true);
+                }
+                hit.transform.gameObject.SetActive(false);
+                selectedCard.SetActive(true);
+                selectedCard.SendMessage("SetCard", cardSelectedConfig);
+                desabledTemporaryCard = hit.transform.gameObject;
+                Debug.Log("Hand Card");
+            }
+            else
+            {
+                selectedCard.SetActive(false);
+                if (desabledTemporaryCard != null)
+                {
+                    desabledTemporaryCard.SetActive(true);
+                }
+            }
+            if (hit.transform.tag == "BuyDeck")
+            {
+                GetHandCards(playerDeck, playerHandCards, playerHand, 1);
+                Debug.Log("BuyDeckCard");
+            }
+        }
+
     }
 }

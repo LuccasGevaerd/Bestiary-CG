@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Maga
   description: "Causa o mesmo dano a carta a direita e \xE0 esquerda do alvo"
-  element: air
+  element: wind
   level: 3
   cost: 15
   life: 3
@@ -24,7 +24,6 @@ MonoBehaviour:
   watherArt: {fileID: 21300000, guid: 19b2500944597b4489638ca3e76049e6, type: 3}
   earthArt: {fileID: 21300000, guid: 19b2500944597b4489638ca3e76049e6, type: 3}
   lightningArt: {fileID: 21300000, guid: 9abc0d2eadbc2224e839ed60b6ee7439, type: 3}
-  airArt: {fileID: 21300000, guid: 19b2500944597b4489638ca3e76049e6, type: 3}
   iceArt: {fileID: 21300000, guid: 19b2500944597b4489638ca3e76049e6, type: 3}
   specialArt: {fileID: 21300000, guid: 19b2500944597b4489638ca3e76049e6, type: 3}
   cardMesh: {fileID: 100030, guid: 9740762742801c2418eec831bcd0f051, type: 3}

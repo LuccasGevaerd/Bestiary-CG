@@ -9,15 +9,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a96f8f4cccaebf244af53361f548d6b4, type: 3}
-  m_Name: Maga Wather 1
+  m_Name: Maga Lightning 2
   m_EditorClassIdentifier: 
   cardName: Maga
   description: "Causa o mesmo dano a carta a direita e \xE0 esquerda do alvo"
-  element: wather
-  level: 1
-  cost: 3
+  element: lightning
+  level: 2
+  cost: 8
   life: 2
-  attack: 1
+  attack: 2
   shield: 0
   fireArt: {fileID: 21300000, guid: 5e1bd40b171ae2749866ad5df7c0fa10, type: 3}
   windArt: {fileID: 21300000, guid: 19b2500944597b4489638ca3e76049e6, type: 3}

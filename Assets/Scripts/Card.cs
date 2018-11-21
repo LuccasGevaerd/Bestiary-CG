@@ -19,7 +19,6 @@ public class Card : ScriptableObject {
     public Sprite watherArt;
     public Sprite earthArt;
     public Sprite lightningArt;
-    public Sprite airArt;
     public Sprite iceArt;
     public Sprite specialArt;
 
