@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BuyDeck
   - HandCard
+  - Field Card
   layers:
   - Default
   - TransparentFX

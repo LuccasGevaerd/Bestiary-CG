@@ -138,6 +138,7 @@ public class BaseCardsBehaviour : MonoBehaviour
     public void SetConfigCard()
     {
         SelectedCardInfo.cardReference = card;
+        CardsController.cardSelectedConfig = card;
         Debug.Log("Card Setted");
     }
 }

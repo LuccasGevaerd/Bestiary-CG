@@ -66,10 +66,24 @@ public class CardsController : MonoBehaviour {
             }
             else
             {
-                selectedCard.SetActive(false);
-                if (desabledTemporaryCard != null)
+                if (hit.transform.tag == "Field Card"  && selectedCard.active)
                 {
-                    desabledTemporaryCard.SetActive(true);
+                    Debug.Log("Field Card");
+                    selectedCard.SetActive(false);
+                    hit.transform.gameObject.SendMessage("SetFieldCard");
+                    if (desabledTemporaryCard != null)
+                    {
+                        Destroy(desabledTemporaryCard);
+                    }
+                    cardSelectedConfig = null;
+                }
+                else
+                {
+                    selectedCard.SetActive(false);
+                    if (desabledTemporaryCard != null)
+                    {
+                        desabledTemporaryCard.SetActive(true);
+                    }
                 }
             }
             if (hit.transform.tag == "BuyDeck")
