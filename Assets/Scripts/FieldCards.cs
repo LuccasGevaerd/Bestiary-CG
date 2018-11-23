@@ -6,6 +6,8 @@ public class FieldCards : MonoBehaviour {
 
     public GameObject Card;
 
+    Card carta;
+
 	void Start () {
 		
 	}
@@ -16,7 +18,8 @@ public class FieldCards : MonoBehaviour {
 
     void SetFieldCard()
     {
+        carta = CardsController.cardSelectedConfig;
         Card.SetActive(true);
-        Card.SendMessage("ReciveCardsSetings",CardsController.cardSelectedConfig);
+        Card.SendMessage("ReciveCardsSetings",carta);
     }
 }
