@@ -1,0 +1,164 @@
+fileFormatVersion: 2
+guid: b1c7af5361599564794464890468d62c
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Arco
+    100002: Base Human001Head
+    100004: Base Human001LCalf
+    100006: Base Human001LCollarbone
+    100008: Base Human001LFoot
+    100010: Base Human001LForearm
+    100012: Base Human001LPalm
+    100014: Base Human001LThigh
+    100016: Base Human001LUpperarm
+    100018: Base Human001Neck1
+    100020: Base Human001Neck2
+    100022: Base Human001Pelvis
+    100024: Base Human001RCalf
+    100026: Base Human001RCollarbone
+    100028: Base Human001RFoot
+    100030: Base Human001RForearm
+    100032: Base Human001Ribcage
+    100034: Base Human001RPalm
+    100036: Base Human001RThigh
+    100038: Base Human001RUpperarm
+    100040: Base Human001Spine1
+    100042: Base Human001Spine2
+    100044: Base Human001Spine3
+    100046: Base Human001Spine4
+    100048: CordaBaixo
+    100050: CordaCima
+    100052: //RootNode
+    100054: Elfo
+    100056: Flecha
+    400000: Arco
+    400002: Base Human001Head
+    400004: Base Human001LCalf
+    400006: Base Human001LCollarbone
+    400008: Base Human001LFoot
+    400010: Base Human001LForearm
+    400012: Base Human001LPalm
+    400014: Base Human001LThigh
+    400016: Base Human001LUpperarm
+    400018: Base Human001Neck1
+    400020: Base Human001Neck2
+    400022: Base Human001Pelvis
+    400024: Base Human001RCalf
+    400026: Base Human001RCollarbone
+    400028: Base Human001RFoot
+    400030: Base Human001RForearm
+    400032: Base Human001Ribcage
+    400034: Base Human001RPalm
+    400036: Base Human001RThigh
+    400038: Base Human001RUpperarm
+    400040: Base Human001Spine1
+    400042: Base Human001Spine2
+    400044: Base Human001Spine3
+    400046: Base Human001Spine4
+    400048: CordaBaixo
+    400050: CordaCima
+    400052: //RootNode
+    400054: Elfo
+    400056: Flecha
+    2100000: Elfo
+    2100002: No Name
+    2300000: Arco
+    2300002: CordaBaixo
+    2300004: CordaCima
+    2300006: Flecha
+    3300000: Arco
+    3300002: CordaBaixo
+    3300004: CordaCima
+    3300006: Flecha
+    4300000: Elfo
+    4300002: Arco
+    4300004: CordaCima
+    4300006: CordaBaixo
+    4300008: Flecha
+    7400000: Gigante,_Arqueiro_e_Guerreiro com texturas
+    9500000: //RootNode
+    13700000: Elfo
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
