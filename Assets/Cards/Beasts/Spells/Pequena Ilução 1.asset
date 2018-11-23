@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a96f8f4cccaebf244af53361f548d6b4, type: 3}
+  m_Name: "Pequena Ilu\xE7\xE3o 1"
+  m_EditorClassIdentifier: 
+  cardName: "Pequena Ilu\xE7\xE3o"
+  description: "Engane o inimigo criando uma carta aleat\xF3ria do seu baralho, a
+    carta n\xE3o poder\xE1 atacar e morrer\xE1 com 1 de ataque, por\xE9m fa\xE7a seu
+    inimigo desperdi\xE7ar sua carta mais forte em um ataque falso. A carta s\xF3
+    poder\xE1 ser usada novamente depois de 2 turnos. "
+  element: 
+  level: 1
+  cost: 0
+  life: 0
+  attack: 0
+  shield: 0
+  fireArt: {fileID: 0}
+  windArt: {fileID: 0}
+  watherArt: {fileID: 0}
+  earthArt: {fileID: 0}
+  lightningArt: {fileID: 0}
+  airArt: {fileID: 0}
+  iceArt: {fileID: 0}
+  specialArt: {fileID: 0}
+  cardMesh: {fileID: 0}
+  cardMeshMaterial: {fileID: 0}
+  nextLevelCard: {fileID: 0}
