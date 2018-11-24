@@ -21,5 +21,6 @@ public class FieldCards : MonoBehaviour {
         carta = CardsController.cardSelectedConfig;
         Card.SetActive(true);
         Card.SendMessage("ReciveCardsSetings",carta);
+        Card.SendMessage("ChangeModel");
     }
 }
