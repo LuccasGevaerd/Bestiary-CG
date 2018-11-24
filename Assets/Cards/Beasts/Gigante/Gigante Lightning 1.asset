@@ -20,14 +20,13 @@ MonoBehaviour:
   life: 15
   attack: 1
   shield: 0
-  fireArt: {fileID: 0}
-  windArt: {fileID: 0}
-  watherArt: {fileID: 0}
-  earthArt: {fileID: 0}
-  lightningArt: {fileID: 0}
-  airArt: {fileID: 0}
-  iceArt: {fileID: 0}
-  specialArt: {fileID: 0}
-  cardMesh: {fileID: 0}
-  cardMeshMaterial: {fileID: 0}
-  nextLevelCard: {fileID: 0}
+  fireArt: {fileID: 21300000, guid: 9f2d396f769db4f4d966f089b5f0357b, type: 3}
+  windArt: {fileID: 21300000, guid: 9f2d396f769db4f4d966f089b5f0357b, type: 3}
+  watherArt: {fileID: 21300000, guid: 9f2d396f769db4f4d966f089b5f0357b, type: 3}
+  earthArt: {fileID: 21300000, guid: 9f2d396f769db4f4d966f089b5f0357b, type: 3}
+  lightningArt: {fileID: 21300000, guid: 9f2d396f769db4f4d966f089b5f0357b, type: 3}
+  iceArt: {fileID: 21300000, guid: 9f2d396f769db4f4d966f089b5f0357b, type: 3}
+  specialArt: {fileID: 21300000, guid: 9f2d396f769db4f4d966f089b5f0357b, type: 3}
+  cardMesh: {fileID: 100048, guid: 42ec5cc859b67354db9649614db18162, type: 3}
+  cardMeshMaterial: {fileID: 2100000, guid: 249d31c95b41cb14a977982a9f9aaaac, type: 2}
+  nextLevelCard: {fileID: 11400000}

@@ -74,7 +74,12 @@ ModelImporter:
     7400000: Gigante,_Arqueiro_e_Guerreiro com texturas
     9500000: //RootNode
     13700000: Elfo
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elfo
+    second: {fileID: 2100000, guid: 4025c9f8dbcb2ec4a87f88ad7d817606, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -146,7 +151,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
