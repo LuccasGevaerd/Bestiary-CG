@@ -79,7 +79,17 @@ ModelImporter:
     7400000: Gigante,_Arqueiro_e_Guerreiro com texturas
     9500000: //RootNode
     13700000: Elfo
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elfo
+    second: {fileID: 2100000, guid: 4025c9f8dbcb2ec4a87f88ad7d817606, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: a105bfdd04d47b848814a8e5497a1989, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -110,7 +120,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 35
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

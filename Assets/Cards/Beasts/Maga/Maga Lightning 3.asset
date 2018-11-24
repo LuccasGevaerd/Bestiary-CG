@@ -19,12 +19,12 @@ MonoBehaviour:
   life: 3
   attack: 3
   shield: 0
-  fireArt: {fileID: 21300000, guid: 5e1bd40b171ae2749866ad5df7c0fa10, type: 3}
-  windArt: {fileID: 21300000, guid: 19b2500944597b4489638ca3e76049e6, type: 3}
-  watherArt: {fileID: 21300000, guid: 19b2500944597b4489638ca3e76049e6, type: 3}
-  earthArt: {fileID: 21300000, guid: 19b2500944597b4489638ca3e76049e6, type: 3}
-  lightningArt: {fileID: 21300000, guid: 9abc0d2eadbc2224e839ed60b6ee7439, type: 3}
-  iceArt: {fileID: 21300000, guid: 19b2500944597b4489638ca3e76049e6, type: 3}
+  fireArt: {fileID: 21300000, guid: cae5465f5f66f47469043094811df0c0, type: 3}
+  windArt: {fileID: 21300000, guid: 685487cfb48026545a48074d553dedc8, type: 3}
+  watherArt: {fileID: 21300000, guid: 82a0f51fe3c953f4eb4d7cba610bb576, type: 3}
+  earthArt: {fileID: 21300000, guid: a2afc3182d39a5c43934c40a379046c2, type: 3}
+  lightningArt: {fileID: 21300000, guid: dfeafb8337eda6744ad87935fc1c7ef0, type: 3}
+  iceArt: {fileID: 21300000, guid: d0795bf239dbe604cafe4077dc678968, type: 3}
   specialArt: {fileID: 21300000, guid: 19b2500944597b4489638ca3e76049e6, type: 3}
   cardMesh: {fileID: 100030, guid: 9740762742801c2418eec831bcd0f051, type: 3}
   cardMeshMaterial: {fileID: 2100000, guid: 9740762742801c2418eec831bcd0f051, type: 3}
