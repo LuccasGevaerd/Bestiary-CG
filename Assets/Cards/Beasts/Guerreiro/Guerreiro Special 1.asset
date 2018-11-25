@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a96f8f4cccaebf244af53361f548d6b4, type: 3}
+  m_Name: Guerreiro Special 1
+  m_EditorClassIdentifier: 
+  cardName: Guerreiro
+  description: Pode defender ataques com Escudo.
+  element: special
+  level: 1
+  cost: 3
+  life: 4
+  attack: 3
+  shield: 1
+  fireArt: {fileID: 21300000, guid: fa075422980a73f429d38f8195f5a34c, type: 3}
+  windArt: {fileID: 21300000, guid: 3702970f02972734cbf58cf7ec365eb7, type: 3}
+  watherArt: {fileID: 21300000, guid: 8d2587761b73a9a4d9d1355fca45e43e, type: 3}
+  earthArt: {fileID: 21300000, guid: ac33180cc0eb6c743b9a3fb04c892cd1, type: 3}
+  lightningArt: {fileID: 21300000, guid: 7000554396df0b740a4077d453d1bf24, type: 3}
+  iceArt: {fileID: 21300000, guid: d84548856e9e9714a9e6eaa2876e45c2, type: 3}
+  specialArt: {fileID: 21300000, guid: fa075422980a73f429d38f8195f5a34c, type: 3}
+  cardMesh: {fileID: 100048, guid: 5b1fa55d347753c45957bd0e4a65d8ba, type: 3}
+  cardMeshMaterial: {fileID: 2100000, guid: 912ec29c54407254ab2ce00287199875, type: 2}
+  nextLevelCard: {fileID: 11400000}

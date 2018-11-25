@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a96f8f4cccaebf244af53361f548d6b4, type: 3}
+  m_Name: Gigante Special 2
+  m_EditorClassIdentifier: 
+  cardName: Gigante
+  description: 'Depois de atacar, tem que esperar 2 turnos para atacar novamente todas
+    as cartas inimigas e absorve o dano para si. '
+  element: special
+  level: 2
+  cost: 10
+  life: 18
+  attack: 1
+  shield: 0
+  fireArt: {fileID: 21300000, guid: 9f2d396f769db4f4d966f089b5f0357b, type: 3}
+  windArt: {fileID: 21300000, guid: 9f2d396f769db4f4d966f089b5f0357b, type: 3}
+  watherArt: {fileID: 21300000, guid: 9f2d396f769db4f4d966f089b5f0357b, type: 3}
+  earthArt: {fileID: 21300000, guid: 9f2d396f769db4f4d966f089b5f0357b, type: 3}
+  lightningArt: {fileID: 21300000, guid: 9f2d396f769db4f4d966f089b5f0357b, type: 3}
+  iceArt: {fileID: 21300000, guid: 9f2d396f769db4f4d966f089b5f0357b, type: 3}
+  specialArt: {fileID: 21300000, guid: 9f2d396f769db4f4d966f089b5f0357b, type: 3}
+  cardMesh: {fileID: 100048, guid: 42ec5cc859b67354db9649614db18162, type: 3}
+  cardMeshMaterial: {fileID: 2100000, guid: 912ec29c54407254ab2ce00287199875, type: 2}
+  nextLevelCard: {fileID: 11400000}
