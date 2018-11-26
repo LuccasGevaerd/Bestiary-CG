@@ -84,7 +84,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Elfo
-    second: {fileID: 2100000, guid: 4025c9f8dbcb2ec4a87f88ad7d817606, type: 2}
+    second: {fileID: 2100000, guid: 912ec29c54407254ab2ce00287199875, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

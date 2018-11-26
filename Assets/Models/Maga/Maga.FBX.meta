@@ -75,7 +75,12 @@ ModelImporter:
     7400000: Take 001
     9500000: //RootNode
     13700000: Maga
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Maga
+    second: {fileID: 2100000, guid: d71373f0c3734a44a87f3a1d1574db2f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -126,7 +131,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 3
+    previousCalculatedGlobalScale: 5
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60

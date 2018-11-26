@@ -2,7 +2,11 @@ fileFormatVersion: 2
 guid: eda492c0f83527b449d3fa456943d07a
 NativeFormatImporter:
   externalObjects: {}
+<<<<<<< HEAD
+  mainObjectFileID: 0
+=======
   mainObjectFileID: 11400000
+>>>>>>> parent of e94c6e4... Base Cards 0.62
   userData: 
   assetBundleName: 
   assetBundleVariant: 
