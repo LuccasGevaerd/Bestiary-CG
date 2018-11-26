@@ -16,7 +16,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Lobo
-    second: {fileID: 2100000, guid: d71373f0c3734a44a87f3a1d1574db2f, type: 2}
+    second: {fileID: 2100000, guid: 162e07bf081ea594ba7d8ff244b5c394, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

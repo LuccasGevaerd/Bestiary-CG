@@ -70,12 +70,7 @@ ModelImporter:
     7400000: Modelos 13-13
     9500000: //RootNode
     13700000: Maga
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Maga
-    second: {fileID: 2100000, guid: d71373f0c3734a44a87f3a1d1574db2f, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -147,6 +142,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

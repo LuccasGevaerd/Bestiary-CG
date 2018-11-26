@@ -28,5 +28,5 @@ MonoBehaviour:
   iceArt: {fileID: 21300000, guid: 9f2d396f769db4f4d966f089b5f0357b, type: 3}
   specialArt: {fileID: 21300000, guid: 9f2d396f769db4f4d966f089b5f0357b, type: 3}
   cardMesh: {fileID: 100048, guid: 42ec5cc859b67354db9649614db18162, type: 3}
-  cardMeshMaterial: {fileID: 2100000, guid: 912ec29c54407254ab2ce00287199875, type: 2}
+  cardMeshMaterial: {fileID: 2100000, guid: 249d31c95b41cb14a977982a9f9aaaac, type: 2}
   nextLevelCard: {fileID: 11400000}
