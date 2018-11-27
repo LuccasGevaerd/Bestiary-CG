@@ -20,7 +20,7 @@ public class SelectedCardInfo : MonoBehaviour {
 	}
     void SetCard()
     {
-        cardGCReference.SendMessage("ReciveCardsSetings",cardReference);
-        cardDescription.text = cardReference.description;
+        cardGCReference.SendMessage("ReciveCardsSetings",CardsController.cardSelectedConfig);
+        cardDescription.text = CardsController.cardSelectedConfig.description;
     }
 }

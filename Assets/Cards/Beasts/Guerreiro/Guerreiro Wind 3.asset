@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Guerreiro
   description: Pode defender ataques com Escudo.
-  element: air
+  element: wind
   level: 3
   cost: 10
   life: 5

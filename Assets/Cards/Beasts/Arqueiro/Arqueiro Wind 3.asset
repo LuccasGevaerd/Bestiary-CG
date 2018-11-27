@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Arqueiro
   description: Ataca 2 vezes.
-  element: air
+  element: wind
   level: 3
   cost: 10
   life: 8

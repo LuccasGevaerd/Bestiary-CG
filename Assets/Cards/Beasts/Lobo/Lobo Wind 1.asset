@@ -14,7 +14,7 @@ MonoBehaviour:
   cardName: Lobo
   description: "Causa sangramento no inimigo, se n\xE3o houver escudo, o inimigo sofrer\xE1
     1 de dano por turno. Esse efeito dura de acordo com o n\xEDvel 1,2,3. "
-  element: air
+  element: wind
   level: 1
   cost: 3
   life: 3

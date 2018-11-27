@@ -14,7 +14,7 @@ MonoBehaviour:
   cardName: Gigante
   description: 'Depois de atacar, tem que esperar 2 turnos para atacar novamente todas
     as cartas inimigas e absorve o dano para si. '
-  element: air
+  element: wind
   level: 3
   cost: 15
   life: 20

@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class CardsController : MonoBehaviour {
 
+    [Header("Enemy lists")]
+    [Space(5)]
+
     public List<Card> playerDeck = new List<Card>();
     public List<Card> playerFieldCards = new List<Card>();
     public List<Card> playerHandCards = new List<Card>();
+
+    [Header("Enemy lists")]
+    [Space(5)]
+
+    public List<Card> enemyDeck = new List<Card>();
+    public List<Card> enemyFieldCards = new List<Card>();
+    public List<Card> enemyHandCards = new List<Card>();
 
     public GameObject cardPrefab;
     public GameObject playerHand;
@@ -14,6 +24,7 @@ public class CardsController : MonoBehaviour {
     public GameObject desabledTemporaryCard;
 
     public static Card cardSelectedConfig;
+    public static Card cardSelectedField;
 
     public int inicialHandCards;
 
@@ -47,51 +58,76 @@ public class CardsController : MonoBehaviour {
     }
     void GetMouseSelection()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if(Physics.Raycast (ray, out hit))
+        if (TurnController.playerTurn == 0)
         {
-            if (hit.transform.tag == "HandCard")
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
             {
-                hit.transform.gameObject.SendMessage("SetConfigCard");
-                if (desabledTemporaryCard != null)
+                if (hit.transform.tag == "HandCard")
                 {
-                    desabledTemporaryCard.SetActive(true);
-                }
-                hit.transform.gameObject.SetActive(false);
-                selectedCard.SetActive(true);
-                selectedCard.SendMessage("SetCard", cardSelectedConfig);
-                desabledTemporaryCard = hit.transform.gameObject;
-                Debug.Log("Hand Card");
-            }
-            else
-            {
-                if (hit.transform.tag == "Field Card"  && selectedCard.active)
-                {
-                    Debug.Log("Field Card");
-                    selectedCard.SetActive(false);
-                    hit.transform.gameObject.SendMessage("SetFieldCard");
-                    if (desabledTemporaryCard != null)
-                    {
-                        Destroy(desabledTemporaryCard);
-                    }
                     cardSelectedConfig = null;
-                }
-                else
-                {
-                    selectedCard.SetActive(false);
+                    hit.transform.gameObject.SendMessage("SetConfigCard");
                     if (desabledTemporaryCard != null)
                     {
                         desabledTemporaryCard.SetActive(true);
                     }
+                    hit.transform.gameObject.SetActive(false);
+                    selectedCard.SetActive(false);
+                    selectedCard.SetActive(true);
+                    selectedCard.SendMessage("SetCard", cardSelectedConfig);
+                    desabledTemporaryCard = hit.transform.gameObject;
+                    Debug.Log("Hand Card");
                 }
-            }
-            if (hit.transform.tag == "BuyDeck")
-            {
-                GetHandCards(playerDeck, playerHandCards, playerHand, 1);
-                Debug.Log("BuyDeckCard");
+                else
+                {
+                    if (hit.transform.tag == "Field Card")
+                    {
+                      
+                        if (cardSelectedConfig != null && selectedCard.active && desabledTemporaryCard != null)
+                        {
+                            selectedCard.SetActive(false);
+                            hit.transform.gameObject.SendMessage("SetFieldCard");
+                            Destroy(desabledTemporaryCard);
+                            cardSelectedConfig = null;
+                            Debug.Log("Field Card Place");
+                        }
+                        else
+                        {
+                            hit.transform.gameObject.SendMessage("SetConfigCard");
+                            if (cardSelectedConfig != null)
+                            {
+                                selectedCard.SetActive(false);
+                                selectedCard.SetActive(true);
+                                selectedCard.SendMessage("SetCard");
+                                Debug.Log("Field Card Selected");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        selectedCard.SetActive(false);
+                        if (desabledTemporaryCard != null)
+                        {
+                            desabledTemporaryCard.SetActive(true);
+                        }
+                    }
+                }
+                if (hit.transform.tag == "BuyDeck")
+                {
+                    GetHandCards(playerDeck, playerHandCards, playerHand, 1);
+                    Debug.Log("BuyDeckCard");
+                }
             }
         }
 
+    }
+    void FieldCardPlace(int id)
+    {
+        playerFieldCards[id] = cardSelectedConfig;
+    }
+    void FieldEnemyPlace(int id)
+    {
+          enemyFieldCards[id] = cardSelectedConfig;
     }
 }

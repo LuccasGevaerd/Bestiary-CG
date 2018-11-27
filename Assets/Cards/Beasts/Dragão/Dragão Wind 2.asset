@@ -14,7 +14,7 @@ MonoBehaviour:
   cardName: "Drag\xE3o"
   description: 'Depois de atacar, tem que esperar 2 turnos para  atacar novamente
     todas as cartas inimigas. '
-  element: air
+  element: wind
   level: 2
   cost: 10
   life: 1
