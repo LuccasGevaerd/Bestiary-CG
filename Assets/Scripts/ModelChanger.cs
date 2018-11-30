@@ -11,10 +11,10 @@ public class ModelChanger : MonoBehaviour {
     public GameObject Dragão;
     public GameObject Lobo;
 
-    void ChangeModel()
+    void ChangeModel(Card carta)
     {
         DesableAll();
-      switch(CardsController.cardSelectedConfig.cardName)
+      switch(carta.cardName)
         {
             case "Maga": Maga.SetActive(true); break;
             case "Guerreiro": Guerreiro.SetActive(true); break;

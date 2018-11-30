@@ -8,14 +8,14 @@ public class CardsController : MonoBehaviour {
     [Space(5)]
 
     public List<Card> playerDeck = new List<Card>();
-    public List<Card> playerFieldCards = new List<Card>();
+    public List<GameObject> playerFieldCardsGCs = new List<GameObject>();
     public List<Card> playerHandCards = new List<Card>();
 
     [Header("Enemy lists")]
     [Space(5)]
 
     public List<Card> enemyDeck = new List<Card>();
-    public List<Card> enemyFieldCards = new List<Card>();
+    public List<GameObject> enemyFieldCardsGCs = new List<GameObject>();
     public List<Card> enemyHandCards = new List<Card>();
 
     public GameObject cardPrefab;
@@ -25,10 +25,17 @@ public class CardsController : MonoBehaviour {
 
     public static Card cardSelectedConfig;
     public static Card cardSelectedField;
+    public static Card modifiedCard;
+    public Card modifiedCardBase;
+
+    public static int attackedPos;
 
     public int inicialHandCards;
 
+    public bool attackMode;
+
 	void Start () {
+        modifiedCard = modifiedCardBase;
         GetHandCards(playerDeck,playerHandCards,playerHand,inicialHandCards);
 	}
 
@@ -64,7 +71,7 @@ public class CardsController : MonoBehaviour {
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.transform.tag == "HandCard")
+                if (!attackMode && hit.transform.tag == "HandCard")
                 {
                     cardSelectedConfig = null;
                     hit.transform.gameObject.SendMessage("SetConfigCard");
@@ -81,10 +88,10 @@ public class CardsController : MonoBehaviour {
                 }
                 else
                 {
-                    if (hit.transform.tag == "Field Card")
+                    if (!attackMode && (hit.transform.tag == "Field Card" || hit.transform.tag == "Enemy Field Cards"))
                     {
                       
-                        if (cardSelectedConfig != null && selectedCard.active && desabledTemporaryCard != null)
+                        if (!attackMode && cardSelectedConfig != null && selectedCard.active && desabledTemporaryCard != null)
                         {
                             selectedCard.SetActive(false);
                             hit.transform.gameObject.SendMessage("SetFieldCard");
@@ -94,13 +101,16 @@ public class CardsController : MonoBehaviour {
                         }
                         else
                         {
-                            hit.transform.gameObject.SendMessage("SetConfigCard");
-                            if (cardSelectedConfig != null)
+                            if (!attackMode)
                             {
-                                selectedCard.SetActive(false);
-                                selectedCard.SetActive(true);
-                                selectedCard.SendMessage("SetCard");
-                                Debug.Log("Field Card Selected");
+                                hit.transform.gameObject.SendMessage("SetConfigCard");
+                                if (cardSelectedConfig != null)
+                                {
+                                    selectedCard.SetActive(false);
+                                    selectedCard.SetActive(true);
+                                    selectedCard.SendMessage("SetCard");
+                                    Debug.Log("Field Card Selected");
+                                }
                             }
                         }
                     }
@@ -118,16 +128,86 @@ public class CardsController : MonoBehaviour {
                     GetHandCards(playerDeck, playerHandCards, playerHand, 1);
                     Debug.Log("BuyDeckCard");
                 }
+                if (attackMode)
+                {
+                    if (hit.transform.tag == "Field Card")
+                    {
+                        hit.transform.gameObject.SendMessage("SetConfigCard");
+                        if (cardSelectedConfig != null)
+                        {
+                            selectedCard.SetActive(false);
+                            selectedCard.SetActive(true);
+                            selectedCard.SendMessage("SetCard");
+                            Debug.Log("Field Card Selected");
+                        }
+
+                    }
+                    if (cardSelectedConfig != null && hit.transform.tag == "Enemy Field Cards")
+                    {
+                        hit.transform.gameObject.SendMessage("GetAttack");
+                        if (attackedPos != 99)
+                        {
+                            switch (cardSelectedConfig.cardName)
+                            {
+                                case "Maga": Attack(3, cardSelectedConfig.attack); break;
+                                case "Guerreiro": Attack(1, cardSelectedConfig.attack); break;
+                                case "Lobo": Attack(1, cardSelectedConfig.attack); break;
+                                case "Dragão": Attack(5, cardSelectedConfig.attack); break;
+                                case "Gigante": Attack(5, cardSelectedConfig.attack); break;
+                                case "Arqueiro": Attack(1, cardSelectedConfig.attack); break;
+                            }
+                        }
+                    }
+                }
             }
         }
 
     }
-    void FieldCardPlace(int id)
+    public void AttackMode()
     {
-        playerFieldCards[id] = cardSelectedConfig;
+        if(!attackMode) attackMode = true;
+        else attackMode = false;
+        Debug.Log("Attack Mode : " + attackMode);
     }
-    void FieldEnemyPlace(int id)
+
+    //
+
+    void Attack(int range,int dmg)
     {
-          enemyFieldCards[id] = cardSelectedConfig;
+        if (dmg > 0)
+        {
+            for (int i = dmg; i > 0; i--)
+            {
+                enemyFieldCardsGCs[attackedPos].SendMessage("GetDamage");
+            }
+        }
+        if (range == 3) {
+            if(attackedPos < enemyFieldCardsGCs.Count -1 && enemyFieldCardsGCs[attackedPos + 1] != null)
+            {
+                for (int i = dmg; i > 0; i--)
+                {
+                    enemyFieldCardsGCs[attackedPos+1].SendMessage("GetDamage");
+                }
+            }
+            if (attackedPos > 0 && enemyFieldCardsGCs[attackedPos - 1] != null)
+            {
+                for (int i = dmg; i > 0; i--)
+                {
+                    enemyFieldCardsGCs[attackedPos - 1].SendMessage("GetDamage");
+                }
+            }
+        }
+        if (range == 5)
+        {
+            for (int y = 0; y < enemyFieldCardsGCs.Count; y++) {
+                if (enemyFieldCardsGCs[y] != null)
+                {
+                    for (int i = dmg; i > 0; i--)
+                    {
+                        enemyFieldCardsGCs[y].SendMessage("GetDamage");
+                    }
+                }
+            }
+        }
     }
 }

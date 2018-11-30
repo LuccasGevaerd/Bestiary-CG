@@ -21,25 +21,33 @@ public class FieldCards : MonoBehaviour {
 
     void SetFieldCard()
     {
-            carta = CardsController.cardSelectedConfig;
-            atualCard = carta;
+        carta = CardsController.cardSelectedConfig;
+        atualCard = carta;
         Card.SetActive(false);
         Card.SetActive(true);
-            GameObject Gc = GameObject.FindGameObjectWithTag("GameController");
-            if (!enemy)
-            {
-                Gc.SendMessage("FieldCardPlace", cardPositionId);
-            }
-            else Gc.SendMessage("FieldEnemyPlace", cardPositionId);
-            Card.SendMessage("ReciveCardsSetings", carta);
-            Card.SendMessage("ChangeModel");
+        GameObject Gc = GameObject.FindGameObjectWithTag("GameController");
+        UpdateSettings();
     }
     void SetConfigCard()
     {
-            CardsController.cardSelectedConfig = atualCard;
+        Card.SendMessage("SetConfigCard");
         if (CardsController.cardSelectedConfig != null)
         {
-            Debug.Log("Setted: " + CardsController.cardSelectedConfig.name);
+            Debug.Log("Setted: " + atualCard.name);
         }
+    }
+    void GetAttack()
+    {
+        if (Card.active) CardsController.attackedPos = cardPositionId;
+        else CardsController.attackedPos = 99;
+    }
+    void UpdateSettings()
+    {
+        Card.SendMessage("ReciveCardsSetings", carta);
+        Card.SendMessage("ChangeModel", carta);
+    }
+    void GetDamage()
+    {
+        if (Card.active) Card.SendMessage("TakeDamage");
     }
 }

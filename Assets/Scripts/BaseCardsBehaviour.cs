@@ -59,10 +59,6 @@ public class BaseCardsBehaviour : MonoBehaviour
 
     void UpdateCard()
     {
-        atualLife = card.life;
-        atualShield = card.shield;
-        atualAttack = card.attack;
-        costText.text = "" + card.cost;
 
         ChangeAtualValues();
 
@@ -128,6 +124,10 @@ public class BaseCardsBehaviour : MonoBehaviour
     public void ReciveCardsSetings(Card cardSetings)
     {
         card = cardSetings;
+        atualLife = card.life;
+        atualShield = card.shield;
+        atualAttack = card.attack;
+        costText.text = "" + card.cost;
         UpdateCard();
     }
     public void MoveInHierarchy(int delta)
@@ -137,8 +137,35 @@ public class BaseCardsBehaviour : MonoBehaviour
     }
     public void SetConfigCard()
     {
-        SelectedCardInfo.cardReference = card;
-        CardsController.cardSelectedConfig = card;
+        CardsController.modifiedCard.cardName = card.cardName;
+        CardsController.modifiedCard.level = card.level;
+        CardsController.modifiedCard.element = card.element;
+        CardsController.modifiedCard.life = atualLife;
+        CardsController.modifiedCard.shield = atualShield;
+        CardsController.modifiedCard.attack = atualAttack;
+        CardsController.modifiedCard.earthArt = card.earthArt;
+        CardsController.modifiedCard.fireArt = card.fireArt;
+        CardsController.modifiedCard.iceArt = card.iceArt;
+        CardsController.modifiedCard.lightningArt = card.lightningArt;
+        CardsController.modifiedCard.specialArt = card.specialArt;
+        CardsController.modifiedCard.watherArt = card.watherArt;
+        CardsController.modifiedCard.windArt = card.windArt;
+        CardsController.modifiedCard.description = card.description;
+        CardsController.modifiedCard.cost = card.cost;
+
+
+        SelectedCardInfo.cardReference = CardsController.modifiedCard;
+        CardsController.cardSelectedConfig = CardsController.modifiedCard;
         Debug.Log("Card Setted");
+    }
+    void TakeDamage()
+    {
+        if (atualLife > 0)
+        {
+            if (atualShield > 0) atualShield--;
+            else atualLife --;
+        }
+        UpdateCard();
+        Debug.Log(card.name + " taked damage");
     }
 }

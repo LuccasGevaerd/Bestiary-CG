@@ -10,6 +10,10 @@ public class TurnController : MonoBehaviour {
 		
 	}
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.T)) playerTurn = 1 - playerTurn;
 	}
+    public void TurnChange()
+    {
+        playerTurn = 1 - playerTurn;
+        Debug.Log("player: " + playerTurn);
+    }
 }
