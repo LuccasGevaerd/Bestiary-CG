@@ -95,8 +95,9 @@ public class CardsController : MonoBehaviour {
                 if (!attackMode && (hit.transform.tag == "Field Card" || hit.transform.tag == "Enemy Field Cards"))
                 {
 
-                    if (!attackMode && cardSelectedConfig != null && selectedCard.active && desabledTemporaryCard != null)
+                    if (!attackMode && cardSelectedConfig != null && selectedCard.active && desabledTemporaryCard != null && cardSelectedConfig.cost <= PlayerStats.playerAtualEnergy)
                     {
+                        PlayerStats.playerAtualEnergy -= cardSelectedConfig.cost;
                         selectedCard.SetActive(false);
                         hit.transform.gameObject.SendMessage("SetFieldCard");
                         Destroy(desabledTemporaryCard);
@@ -150,8 +151,9 @@ public class CardsController : MonoBehaviour {
                     if (cardSelectedConfig != null && hit.transform.tag == "Enemy Field Cards")
                     {
                         hit.transform.gameObject.SendMessage("GetAttack");
-                        if (attackedPos != 99)
+                        if (attackedPos != 99 && cardSelectedConfig.cost <= PlayerStats.playerAtualEnergy)
                         {
+                            PlayerStats.playerAtualEnergy -= cardSelectedConfig.cost;
                             Instantiate(attackEffect, new Vector3(hit.transform.position.x, 2, hit.transform.position.z), attackEffect.transform.rotation);
                             switch (cardSelectedConfig.cardName)
                             {

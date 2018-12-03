@@ -30,6 +30,7 @@ public class FieldCards : MonoBehaviour {
     }
     public void SetConfigCard()
     {
+        if(Card.active)
         Card.SendMessage("SetConfigCard");
     }
     void GetAttack()

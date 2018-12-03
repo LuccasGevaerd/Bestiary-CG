@@ -5,6 +5,7 @@ using UnityEngine;
 public class TurnController : MonoBehaviour {
 
     public static int playerTurn = 0;
+    public int energyByTurn = 5;
 
 	void Start () {
 		
@@ -14,6 +15,7 @@ public class TurnController : MonoBehaviour {
     public void TurnChange()
     {
         playerTurn = 1 - playerTurn;
+        if (playerTurn == 0) PlayerStats.playerAtualEnergy += energyByTurn;
         Debug.Log("player: " + playerTurn);
     }
 }
