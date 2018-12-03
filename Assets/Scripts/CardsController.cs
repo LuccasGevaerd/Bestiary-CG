@@ -34,7 +34,13 @@ public class CardsController : MonoBehaviour {
 
     public bool attackMode;
 
-	void Start () {
+    [Header("Effects lists")]
+    [Space(5)]
+    [Tooltip("Fire,Water,Earth,Ice,Lightning,Wind")]
+    public GameObject[] effectsPrefabs;
+    public GameObject attackEffect;
+
+    void Start () {
         modifiedCard = modifiedCardBase;
         GetHandCards(playerDeck,playerHandCards,playerHand,inicialHandCards);
 	}
@@ -86,41 +92,40 @@ public class CardsController : MonoBehaviour {
                     desabledTemporaryCard = hit.transform.gameObject;
                     Debug.Log("Hand Card");
                 }
-                else
+                if (!attackMode && (hit.transform.tag == "Field Card" || hit.transform.tag == "Enemy Field Cards"))
                 {
-                    if (!attackMode && (hit.transform.tag == "Field Card" || hit.transform.tag == "Enemy Field Cards"))
+
+                    if (!attackMode && cardSelectedConfig != null && selectedCard.active && desabledTemporaryCard != null)
                     {
-                      
-                        if (!attackMode && cardSelectedConfig != null && selectedCard.active && desabledTemporaryCard != null)
-                        {
-                            selectedCard.SetActive(false);
-                            hit.transform.gameObject.SendMessage("SetFieldCard");
-                            Destroy(desabledTemporaryCard);
-                            cardSelectedConfig = null;
-                            Debug.Log("Field Card Place");
-                        }
-                        else
-                        {
-                            if (!attackMode)
-                            {
-                                hit.transform.gameObject.SendMessage("SetConfigCard");
-                                if (cardSelectedConfig != null)
-                                {
-                                    selectedCard.SetActive(false);
-                                    selectedCard.SetActive(true);
-                                    selectedCard.SendMessage("SetCard");
-                                    Debug.Log("Field Card Selected");
-                                }
-                            }
-                        }
+                        selectedCard.SetActive(false);
+                        hit.transform.gameObject.SendMessage("SetFieldCard");
+                        Destroy(desabledTemporaryCard);
+                        cardSelectedConfig = null;
+                        Debug.Log("Field Card Place");
                     }
                     else
                     {
-                        selectedCard.SetActive(false);
-                        if (desabledTemporaryCard != null)
+                        hit.transform.gameObject.SendMessage("SetConfigCard");
+                        if (cardSelectedConfig != null)
                         {
-                            desabledTemporaryCard.SetActive(true);
+                            if (desabledTemporaryCard != null)
+                            {
+                                desabledTemporaryCard.SetActive(true);
+                            }
+                            selectedCard.SetActive(false);
+                            selectedCard.SetActive(true);
+                            selectedCard.SendMessage("SetCard");
+                            Debug.Log("Field Card Selected");
+                            cardSelectedConfig = null;
                         }
+                    }
+                }
+                if (hit.transform.tag != "HandCard" && hit.transform.tag != "Field Card" && hit.transform.tag != "Enemy Field Cards")
+                {
+                    selectedCard.SetActive(false);
+                    if (desabledTemporaryCard != null)
+                    {
+                        desabledTemporaryCard.SetActive(true);
                     }
                 }
                 if (hit.transform.tag == "BuyDeck")
@@ -147,6 +152,7 @@ public class CardsController : MonoBehaviour {
                         hit.transform.gameObject.SendMessage("GetAttack");
                         if (attackedPos != 99)
                         {
+                            Instantiate(attackEffect, new Vector3(hit.transform.position.x, 2, hit.transform.position.z), attackEffect.transform.rotation);
                             switch (cardSelectedConfig.cardName)
                             {
                                 case "Maga": Attack(3, cardSelectedConfig.attack); break;
@@ -176,38 +182,59 @@ public class CardsController : MonoBehaviour {
     {
         if (dmg > 0)
         {
-            for (int i = dmg; i > 0; i--)
-            {
-                enemyFieldCardsGCs[attackedPos].SendMessage("GetDamage");
-            }
+            enemyFieldCardsGCs[attackedPos].SendMessage("GetDamage",dmg);
+            EffectSpawner(enemyFieldCardsGCs[attackedPos]);
         }
-        if (range == 3) {
-            if(attackedPos < enemyFieldCardsGCs.Count -1 && enemyFieldCardsGCs[attackedPos + 1] != null)
+
+        if (range == 3)
+        {
+            if (attackedPos < enemyFieldCardsGCs.Count - 1 && enemyFieldCardsGCs[attackedPos + 1] != null)
             {
-                for (int i = dmg; i > 0; i--)
-                {
-                    enemyFieldCardsGCs[attackedPos+1].SendMessage("GetDamage");
-                }
+                enemyFieldCardsGCs[attackedPos + 1].SendMessage("GetDamage", dmg);
+                EffectSpawner(enemyFieldCardsGCs[attackedPos + 1]);
             }
+
             if (attackedPos > 0 && enemyFieldCardsGCs[attackedPos - 1] != null)
             {
-                for (int i = dmg; i > 0; i--)
-                {
-                    enemyFieldCardsGCs[attackedPos - 1].SendMessage("GetDamage");
-                }
+                enemyFieldCardsGCs[attackedPos - 1].SendMessage("GetDamage", dmg);
+                EffectSpawner(enemyFieldCardsGCs[attackedPos - 1]);
             }
         }
+
         if (range == 5)
         {
             for (int y = 0; y < enemyFieldCardsGCs.Count; y++) {
                 if (enemyFieldCardsGCs[y] != null)
                 {
-                    for (int i = dmg; i > 0; i--)
-                    {
-                        enemyFieldCardsGCs[y].SendMessage("GetDamage");
-                    }
+                    enemyFieldCardsGCs[y].SendMessage("GetDamage", dmg);
+                    EffectSpawner(enemyFieldCardsGCs[y]);
                 }
             }
+        }
+    }
+    void EffectSpawner(GameObject hit)
+    {
+        switch (cardSelectedConfig.element)
+        {
+            case "fire":
+                Instantiate(effectsPrefabs[0], new Vector3(hit.transform.position.x, 2, hit.transform.position.z), effectsPrefabs[0].transform.rotation);
+                break;
+            case "wather":
+                Instantiate(effectsPrefabs[1], new Vector3(hit.transform.position.x, 2, hit.transform.position.z), effectsPrefabs[1].transform.rotation);
+                break;
+            case "earth":
+                Instantiate(effectsPrefabs[2], new Vector3(hit.transform.position.x, 2, hit.transform.position.z), effectsPrefabs[2].transform.rotation);
+                break;
+            case "ice":
+                Instantiate(effectsPrefabs[3], new Vector3(hit.transform.position.x, 2, hit.transform.position.z), effectsPrefabs[3].transform.rotation);
+                break;
+            case "lightning":
+                Instantiate(effectsPrefabs[4], new Vector3(hit.transform.position.x, 2, hit.transform.position.z), effectsPrefabs[4].transform.rotation);
+                break;
+            case "wind":
+                Instantiate(effectsPrefabs[5], new Vector3(hit.transform.position.x, 2, hit.transform.position.z), effectsPrefabs[5].transform.rotation);
+                break;
+
         }
     }
 }

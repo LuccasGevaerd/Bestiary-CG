@@ -28,13 +28,9 @@ public class FieldCards : MonoBehaviour {
         GameObject Gc = GameObject.FindGameObjectWithTag("GameController");
         UpdateSettings();
     }
-    void SetConfigCard()
+    public void SetConfigCard()
     {
         Card.SendMessage("SetConfigCard");
-        if (CardsController.cardSelectedConfig != null)
-        {
-            Debug.Log("Setted: " + atualCard.name);
-        }
     }
     void GetAttack()
     {
@@ -46,8 +42,8 @@ public class FieldCards : MonoBehaviour {
         Card.SendMessage("ReciveCardsSetings", carta);
         Card.SendMessage("ChangeModel", carta);
     }
-    void GetDamage()
+    void GetDamage(int dmg)
     {
-        if (Card.active) Card.SendMessage("TakeDamage");
+        if (Card.active) Card.SendMessage("TakeDamage",dmg);
     }
 }

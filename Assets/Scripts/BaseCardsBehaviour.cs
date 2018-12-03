@@ -155,16 +155,17 @@ public class BaseCardsBehaviour : MonoBehaviour
 
 
         SelectedCardInfo.cardReference = CardsController.modifiedCard;
-        CardsController.cardSelectedConfig = CardsController.modifiedCard;
-        Debug.Log("Card Setted");
+        CardsController.cardSelectedConfig = card;
+        Debug.Log("Card " + CardsController.cardSelectedConfig.cardName + " Setted");
     }
-    void TakeDamage()
+    void TakeDamage(int dmg)
     {
         if (atualLife > 0)
         {
             if (atualShield > 0) atualShield--;
-            else atualLife --;
+            else atualLife -= dmg;
         }
+        if(atualLife < 0) { }
         UpdateCard();
         Debug.Log(card.name + " taked damage");
     }

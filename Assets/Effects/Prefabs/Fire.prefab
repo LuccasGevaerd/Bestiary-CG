@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4223596251576480}
+  - component: {fileID: 114802556549695656}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -82,7 +83,7 @@ Transform:
   m_GameObject: {fileID: 1890202298368058}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4946813876112302}
   m_Father: {fileID: 4223596251576480}
@@ -101,6 +102,18 @@ Transform:
   m_Father: {fileID: 4664635634567040}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &114802556549695656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1103366783392254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 307631b78d27fdf42a6a382a7cc7c581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 5
 --- !u!198 &198244780060032132
 ParticleSystem:
   m_ObjectHideFlags: 1

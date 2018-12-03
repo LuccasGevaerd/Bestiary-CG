@@ -53,6 +53,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4481743510579256}
+  - component: {fileID: 114334938112377462}
   m_Layer: 0
   m_Name: Lightning
   m_TagString: Untagged
@@ -84,7 +85,7 @@ Transform:
   m_GameObject: {fileID: 1143163655157858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4540500007102156}
   - {fileID: 4200763645680718}
@@ -168,6 +169,18 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114334938112377462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1510431124103092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 307631b78d27fdf42a6a382a7cc7c581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 5
 --- !u!198 &198815075256260312
 ParticleSystem:
   m_ObjectHideFlags: 1
