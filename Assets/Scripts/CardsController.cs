@@ -129,11 +129,6 @@ public class CardsController : MonoBehaviour {
                         desabledTemporaryCard.SetActive(true);
                     }
                 }
-                if (hit.transform.tag == "BuyDeck")
-                {
-                    GetHandCards(playerDeck, playerHandCards, playerHand, 1);
-                    Debug.Log("BuyDeckCard");
-                }
                 if (attackMode)
                 {
                     if (hit.transform.tag == "Field Card")
@@ -176,6 +171,12 @@ public class CardsController : MonoBehaviour {
         if(!attackMode) attackMode = true;
         else attackMode = false;
         Debug.Log("Attack Mode : " + attackMode);
+    }
+
+    void Buy()
+    {
+        GetHandCards(playerDeck, playerHandCards, playerHand, 1);
+        Debug.Log("BuyDeckCard");
     }
 
     //

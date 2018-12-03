@@ -15,7 +15,11 @@ public class TurnController : MonoBehaviour {
     public void TurnChange()
     {
         playerTurn = 1 - playerTurn;
-        if (playerTurn == 0) PlayerStats.playerAtualEnergy += energyByTurn;
+        if (playerTurn == 0)
+        {
+            gameObject.SendMessage("Buy");
+            PlayerStats.playerAtualEnergy += energyByTurn;
+        }
         Debug.Log("player: " + playerTurn);
     }
 }

@@ -11,7 +11,7 @@ public class BaseCardsBehaviour : MonoBehaviour
 
     [Header("Card Values")]
     [Space(5)]
-    public int atualLife;
+    public int atualLife = 1;
     public int atualAttack;
     public int atualShield;
 
@@ -160,12 +160,19 @@ public class BaseCardsBehaviour : MonoBehaviour
     }
     void TakeDamage(int dmg)
     {
-        if (atualLife > 0)
+        if (atualShield == 0 && atualLife <= dmg)
         {
-            if (atualShield > 0) atualShield--;
-            else atualLife -= dmg;
+            PlayerStats.playerAtualLife -= (dmg - atualLife);
+            gameObject.SetActive(false);
         }
-        if(atualLife < 0) { }
+        else
+        {
+            if (atualLife > 0)
+            {
+                if (atualShield > 0) atualShield--;
+                else atualLife -= dmg;
+            }
+        }
         UpdateCard();
         Debug.Log(card.name + " taked damage");
     }
